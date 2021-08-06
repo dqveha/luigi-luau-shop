@@ -20,10 +20,6 @@ Your site should include validations for the following:
 
     All fields should be filled out, including rating.
 
-Flash Messages
-
-    The project should include flash success and error messages for creating products and reviews.
-
 Overall Styling
 
 You'll be demoing this site to the CEO of Mario's Specialty Foods, so it should look presentable. -->

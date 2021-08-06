@@ -11,18 +11,17 @@ class Product < ApplicationRecord
     .group("products.id")
     .order("reviews_count DESC")
   )}
-  end
 
   
   scope :recent_three, -> { order(created_at: :desc).limit(3)}
   
-  scope :made_in_us, -> {"country_of_origin =?", "US"}
+  scope :made_in_us, -> {where("country_of_origin =?", "US")}
   
   before_save(:titleize_product)
-  
+
   private
     def titleize_product
       self.name = self.name.titleize
       self.country_of_origin = self.country_of_origin.titleize
     end
-end
+  end
