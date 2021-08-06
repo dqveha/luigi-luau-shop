@@ -2,9 +2,11 @@ class Review < ApplicationRecord
   belongs_to :product
 
   validates :author, presence: true
-  validates :content_body, presence: true
-  validates :rating, presence: true
+  validates :content_body, presence: true, length: { in: 50..250}
+  validates :rating, presence: true, numericality: { in: 1..5}
   validates :product_id, presence: true
+
+  # Unable to get before_save to work with Review class; tested on record store practice, and does not work as well for some reason.
 
   # before_save(:titleize_author, :capitalize_content)
 
