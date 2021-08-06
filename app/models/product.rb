@@ -13,12 +13,13 @@ class Product < ApplicationRecord
   )}
   end
 
-  before_save(:titleize_product)
-
+  
   scope :recent_three, -> { order(created_at: :desc).limit(3)}
-
+  
   scope :made_in_us, -> {"country_of_origin =?", "US"}
-
+  
+  before_save(:titleize_product)
+  
   private
     def titleize_product
       self.name = self.name.titleize
