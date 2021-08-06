@@ -5,8 +5,7 @@ ruby '2.6.5'
 
 gem 'jquery-rails'
 
-# gem 'bootstrap-sass', '~> 3.4.1'
-# gem 'sassc-rails', '>= 2.1.0'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.4'
@@ -33,6 +32,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'faker'
+
+# gem 'bootstrap', '~> 5.0.1'
+# gem 'sprockets-rails', :require => 'sprockets/railtie'
+
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

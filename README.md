@@ -14,24 +14,11 @@ The site needs to include a products section with a list of the tasty products t
     Users should be able to click an individual product to see its detail page. (You will not be expected to show the product's average rating. That's included in the further exploration section.)
     Users should be able to add a review to a product.
 
-Scopes
-
-Your site should use scopes to display the following information on the site:
-
-    The product with the most reviews.
-    The three most recently added products.
-    All products made in the USA for buyers that want to buy local products.
-
 Validations
 
 Your site should include validations for the following:
 
     All fields should be filled out, including rating.
-    Rating can only be an integer between 1 and 5.
-
-Seeding
-
-    Your project should include seed data for 50 products and 250 reviews. Use Faker with a loop to seed the database.
 
 Flash Messages
 

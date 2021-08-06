@@ -7,13 +7,11 @@ describe Review do
   it { should validate_presence_of(:author) }
   it { should validate_length_of(:content_body).is_at_least(50) }
   it { should validate_length_of(:content_body).is_at_most(250) }
-  it { should allow_value(0).for(:rating) }
   it { should allow_value(1).for(:rating) }
   it { should allow_value(2).for(:rating) }
   it { should allow_value(3).for(:rating) }
   it { should allow_value(4).for(:rating) }
   it { should allow_value(5).for(:rating) }
-  it { should allow_value(6).for(:rating) }
   it { should validate_presence_of(:product_id) }
   
 
