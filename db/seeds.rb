@@ -6,11 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Product.destroy_all
+Review.destroy_all
+
 50.times do |product_instance|
   product = Product.create!(name: Faker::SlackEmoji.objects_and_symbols,
                             cost: Faker::Number.decimal(l_digits: 2),
                             country_of_origin: Faker::Address.country_code)
-  # product.update_attributes(:updated_at, Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :long))
+  product.update_attributes(updated_at: Faker::Time.between(from: DateTime.now, to: DateTime.now + 1, format: :long))
   
   250.times do |review_instance|
     Review.create!(author: Faker::FunnyName.name,

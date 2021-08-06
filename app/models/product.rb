@@ -12,7 +12,6 @@ class Product < ApplicationRecord
     .order("reviews_count DESC")
   )}
 
-  
   scope :recent_three, -> { order(created_at: :desc).limit(3)}
   
   scope :made_in_us, -> {where("country_of_origin =?", "US")}

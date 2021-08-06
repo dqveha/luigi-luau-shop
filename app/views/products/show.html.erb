@@ -8,8 +8,8 @@
     <ul>
       <li>
         <%= link_to review.author, product_review_path(@product, review) %>
-        <%= link_to review.rating, product_review_path(@product, review) %>
-        <%= link_to review.content_body, product_review_path(@product, review) %>
+        <%= review.rating%>
+        <%= review.content_body%>
       </li>
     </ul>
   <% end %>
