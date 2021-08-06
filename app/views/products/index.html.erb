@@ -1,5 +1,41 @@
 <h1>Luigi's Lūʻau Specialty Shop</h1>
 
+<h3>Recent products added</h3>
+<% if @products_recent.any? %>
+    <ul>
+      <% @products_recent.each do |product| %>
+        <li><%= link_to product.name, product_path(product) %></li>
+      <% end%>
+    </ul>
+  <% else %>
+    <p>No products</p>
+  <% end %>
+
+<h3>Products with most reviews</h3>
+<% if @products_most_reviews.any? %>
+    <ul>
+      <% @products_most_reviews.each do |product| %>
+        <li><%= link_to product.name, product_path(product) %></li>
+      <% end%>
+    </ul>
+  <% else %>
+    <p>No products have reviews yet</p>
+  <% end %>
+
+<h3>Products made in the US</h3>
+<% if @products_us.any? %>
+    <ul>
+      <% @products_us.each do |product| %>
+        <li><%= link_to product.name, product_path(product) %></li>
+      <% end%>
+    </ul>
+  <% else %>
+    <p>No products from the US in our inventory</p>
+  <% end %>
+
+
+
+<h3>All products</h3>
   <% if @products.any? %>
     <ul>
       <% @products.each do |product| %>
@@ -10,6 +46,6 @@
     <p>No products have been created yet</p>
   <% end %>
 
-  <p><%= link_to "Add a product", new_product_path %></p>
 
-  <a href="location location location">link to routes</a>
+
+  <p><%= link_to "Add a product", new_product_path %></p>

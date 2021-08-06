@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Myapp</title>
+    <title>Luigi's Lūʻau Specialty Shop</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,8 +11,8 @@
 
   <body>
 
-    <%= flash[:notice] %>
-    <%= flash[:error] %>
+    <h2><%= flash[:notice] %></h2>
+    <h2><%= flash[:error] %></h2>
 
     <%= yield %>
   </body>

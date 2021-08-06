@@ -1,0 +1,14 @@
+<h3>Edit product</h3>
+<%= render "layouts/errors", :object => @product %>
+
+<%= form_for @product do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :cost %>
+  <%= f.number_field :cost, :step => 0.01  %>
+  <%= f.label :country_of_origin %>
+  <%= f.text_field :country_of_origin %>
+  <%= f.submit %>
+<% end %>
+
+<p><%= link_to "Homepage", root_path %></p>
