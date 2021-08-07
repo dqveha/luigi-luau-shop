@@ -23,7 +23,7 @@ describe "the add a review process" do
     end
     click_on ("Add a review")
     click_on ("Create Review")
-    expect(page).to have_content "There was a problem uploading your review. Please provide a review with a rating between 1 to 5, and entry of 50 to 250 characters"
+    expect(page).to have_content "Author can't be blank"
   end
 
 end
