@@ -70,6 +70,7 @@ docker-compose run web bundle exec rspec
 
 1. Unable to get before_save to work with Review class properly
 2. Decimals do not list to the hundreths place if product's listing price is 1.1, 1.2, 1.3, etc.
+3. When the country of origin is saved such as 'uS', the product's listing shows its country of origin as 'U S' with a space in between.
 
 ## Work in progress:
 
