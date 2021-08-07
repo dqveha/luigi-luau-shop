@@ -10,7 +10,7 @@ class Product < ApplicationRecord
     .joins(:reviews)
     .group("products.id")
     .order("reviews_count DESC")
-    .limit(10)
+    .limit(1)
   )}
 
   scope :recent_three, -> { order(created_at: :desc).limit(3)}

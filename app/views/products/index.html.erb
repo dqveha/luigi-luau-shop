@@ -11,10 +11,10 @@
     <p>No products</p>
   <% end %>
 
-<h3>Products with most reviews</h3>
-<% if @products_most_reviews.any? %>
+<h3>Product with the most reviews</h3>
+<% if @product_most_reviews.any? %>
     <ul>
-      <% @products_most_reviews.each do |product| %>
+      <% @product_most_reviews.each do |product| %>
         <li><%= link_to product.name, product_path(product) %></li>
       <% end%>
     </ul>
