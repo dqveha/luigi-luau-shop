@@ -43,7 +43,7 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Review created"
       redirect_to product_path(@product)
     else
-      flash[:error] = "There was a problem uploading your review. Please provide a review with a rating between 1 to 5, and entry of 50 to 250 characters"
+      flash[:error] = "There was a problem uploading your review."
       render :new
     end
   end

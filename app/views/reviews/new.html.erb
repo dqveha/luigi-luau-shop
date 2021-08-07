@@ -1,5 +1,7 @@
 <h1>Add your review:</h1>
 
+<%= render "layouts/errors", :object => @review %>
+
 <%= form_for [@product, @review] do |f| %>
   <%= f.label :author %>
   <%= f.text_field :author %>
@@ -9,3 +11,5 @@
   <%= f.text_area :content_body %>
   <p><%= f.submit %></p>
 <% end %>
+
+<p><%= link_to "Go back", product_path(@product) %></p>

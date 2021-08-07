@@ -8,9 +8,11 @@
   <% @product.reviews.each do |review| %>
     <ul>
       <li>
-        <%= link_to review.author, product_review_path(@product, review) %>
-        <%= review.rating%>
-        <%= review.content_body%>
+        Author: <%= review.author%>, 
+        Rating: <%= review.rating%>
+        <br>
+        <br>
+        Review: "<%= review.content_body%>"
       </li>
     </ul>
   <% end %>

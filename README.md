@@ -77,6 +77,7 @@ docker-compose run web bundle exec rspec
 1. Will create separate pages, if desired, to feature three most recently added products and products with the most reviews
 2. Creating a drop-down menu for the country of origin when adding a product
 3. Improving overall layout using Bootstrap and CSS
+4. Add tables to better organize the reviews and products
 
 ---
 
