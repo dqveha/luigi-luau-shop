@@ -45,8 +45,8 @@ docker ps
 docker exec [container_ID] pg_dump -U postgres luigi_specialty_development < database_backup.sql
 ```
 
-    + (b) If step 6(a) does not work, replace 'luigi_specialty_development' with 'postgres' and try again.
-    + (c) If step 6(a) and 6(b) does not work through Docker, follow these steps here within the terminal to create the database yourself:
++ (b) If step 6(a) does not work, replace 'luigi_specialty_development' with 'postgres' and try again.
++ (c) If step 6(a) and 6(b) does not work through Docker, follow these steps here within the terminal to create the database yourself:
 
     docker exec -it -u postgres [container_ID] psql
     CREATE DATABASE luigi_specialty_development;
