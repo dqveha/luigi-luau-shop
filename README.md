@@ -39,20 +39,10 @@ https://github.com/dqveha/luigi-luau-shop.git
 docker ps
 ```
 
-6. (a) Copy the container ID related to the database and load the database_backup.sql within the folder by typing in:
+6. Copy the container ID related to the database and load the database_backup.sql within the folder by typing in:
 
 ```
 docker exec [container_ID] pg_dump -U postgres luigi_specialty_development < database_backup.sql
-```
-
-+ (b) If step 6(a) does not work, replace 'luigi_specialty_development' with 'postgres' and try again.
-+ (c) If step 6(a) and 6(b) does not work through Docker, follow these steps here within the terminal to create the database yourself:
-```
-docker exec -it -u postgres [container_ID] psql
-CREATE DATABASE luigi_specialty_development;
-\c luigi_specialty_development
-CREATE TABLE projects (title varchar, id serial PRIMARY KEY);
-CREATE TABLE volunteers (name varchar, project_id int, id serial PRIMARY KEY);
 ```
 
 7. The user can open the webpage by visiting this URL in the browser:
