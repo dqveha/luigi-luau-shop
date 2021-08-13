@@ -39,10 +39,11 @@
                 <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">1</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">2</a>
+                            <% if current_user %>
+                                <%= current_user.email %> | <%= link_to "Sign out", '/signout' %>
+                            <% else %>
+                                <%= link_to "Sign up", 'signup' %> | <%= link_to "Sign in", '/signin' %>
+                            <% end %>
                         </li>
                     </ul>
                 </div>
