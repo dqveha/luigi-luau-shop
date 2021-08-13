@@ -8,7 +8,7 @@
   <% @product.reviews.each do |review| %>
     <table>
       <tr>
-        <td>Author: <%= review.author%></td>
+        <td>Author: <%= link_to review.author, edit_product_review_path(@product, review) %></td>
         <td id="spacing">Rating: <%= review.rating%></td>
       </tr>
       <tr>
