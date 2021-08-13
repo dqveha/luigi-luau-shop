@@ -72,7 +72,7 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'rspec'
-  gem 'capybara', '>= 2.15'
+  gem 'capybara'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'shoulda-matchers'
