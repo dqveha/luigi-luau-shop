@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get '/products/most' => 'products#most'
   get '/products/recent' => 'products#recent'
-  get '/products/us' => 'products#usa'
+  get '/products/us' => 'products#us'
   
   resources :products do
     resources :reviews

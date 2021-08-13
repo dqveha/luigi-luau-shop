@@ -15,13 +15,13 @@ class Product < ApplicationRecord
 
   scope :recent_three, -> { order(created_at: :desc).limit(3)}
   
-  scope :made_in_us, -> { where("lower(country_of_origin) = ?", "us")}
+  scope :made_in_us, -> { where("lower(country_of_origin) = ?", "US")}
   
   before_save(:titleize_product)
 
   private
     def titleize_product
       self.name = self.name.titleize
-      self.country_of_origin = self.country_of_origin.titleize
+      self.country_of_origin = self.country_of_origin.upcase
     end
   end

@@ -1,8 +1,13 @@
 require 'rails_helper'
 
 describe "the edit a product process" do
-  it "edits a product" do
+
+  before(:each) do
+    Product.destroy_all
     test_product = Product.create({:name => "Chef's Knife", :cost => "24.99", :country_of_origin => "Thailand"})
+  end
+
+  it "edits a product" do
     visit products_path
     within('.find_me') do
       click_on ("Chef\'s Knife")
@@ -16,7 +21,6 @@ describe "the edit a product process" do
   end
 
   it "gives an error when no name is entered" do
-    test_product = Product.create({:name => "Chef's Knife", :cost => "24.99", :country_of_origin => "Thailand"})
     visit products_path
     within('.find_me') do
       click_on ("Chef\'s Knife")

@@ -11,8 +11,8 @@ describe Product do
   
 
   it("titleizes the name of the product and country of origin") do
-    product = Product.create({name: "chef's knife", cost: 24.99, country_of_origin: "thailand"})
+    product = Product.create({name: "chef's knife", cost: 24.99, country_of_origin: "us"})
     expect(product.name()).to(eq("Chef's Knife"))
-    expect(product.country_of_origin()).to(eq("Thailand"))
+    expect(product.country_of_origin()).to(eq("US"))
   end
 end

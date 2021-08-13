@@ -10,15 +10,14 @@ Product.destroy_all
 Review.destroy_all
 
 50.times do |product_instance|
-  product = Product.create!(name: Faker::SlackEmoji.objects_and_symbols,
+  product = Product.create!(name: Faker::Beer.brand,
                             cost: Faker::Number.decimal(l_digits: 2),
-                            country_of_origin: Faker::Address.country_code)
-  product.update_attributes(updated_at: Faker::Time.between(from: DateTime.now, to: DateTime.now + 1, format: :long))
+                            country_of_origin: Faker::Address.country_code,
+                            updated_at: Faker::Time.between(from: DateTime.now, to: DateTime.now + 1, format: :long))
   
-  250.times do |review_instance|
+  5.times do |review_instance|
     Review.create!(author: Faker::FunnyName.name,
                   content_body: 
-                  # Faker::Movies::HitchhikersGuideToTheGalaxy.quote,
                   Faker::Lorem.paragraph_by_chars(number: 250, supplemental: false),
                   rating: Faker::Number.between(from:1, to: 5),
                   product_id: product.id)
