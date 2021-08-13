@@ -7,6 +7,24 @@ class ProductsController < ApplicationController
     render :index
   end
 
+  def most
+    @products = Product.all
+    @product_most_reviews = @products.most_reviews
+    render :most
+  end
+
+  def recent
+    @products = Product.all
+    @products_recent = @products.recent_three
+    render :recent
+  end
+
+  def us
+    @products = Product.all
+    @products_us = @products.made_in_us
+    render :us
+  end
+
   def new
     @product = Product.new
     render :new

@@ -1,0 +1,10 @@
+<h3>Product with the most reviews</h3>
+<% if @product_most_reviews.any? %>
+    <ul>
+      <% @product_most_reviews.each do |product| %>
+        <li><%= link_to product.name, product_path(product) %></li>
+      <% end%>
+    </ul>
+  <% else %>
+    <p>No products have reviews yet</p>
+<% end %>

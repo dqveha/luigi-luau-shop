@@ -5,6 +5,15 @@ ruby '2.6.5'
 
 gem 'jquery-rails'
 
+gem 'bootstrap', '~> 5.0.1'
+
+gem 'autoprefixer-rails'
+
+gem 'popper_js'
+
+gem 'sassc-rails'
+
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -32,9 +41,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'faker'
-
-# gem 'bootstrap', '~> 5.0.1'
-# gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 
 # Use ActiveStorage variant
@@ -70,6 +76,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'shoulda-matchers'
+  gem 'launchy'
+  gem 'simplecov', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

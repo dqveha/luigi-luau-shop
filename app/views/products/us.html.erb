@@ -1,0 +1,10 @@
+<h3>Products made in the US</h3>
+<% if @products_us.any? %>
+    <ul>
+      <% @products_us.each do |product| %>
+        <li><%= link_to product.name, product_path(product) %></li>
+      <% end%>
+    </ul>
+  <% else %>
+    <p>No products from the US in our inventory</p>
+<% end %>

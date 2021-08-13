@@ -1,0 +1,10 @@
+<h3>Recent products added</h3>
+<% if @products_recent.any? %>
+    <ul>
+      <% @products_recent.each do |product| %>
+        <li><%= link_to product.name, product_path(product) %></li>
+      <% end%>
+    </ul>
+  <% else %>
+    <p>No products</p>
+<% end %>
