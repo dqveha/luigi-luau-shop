@@ -1,8 +1,16 @@
 <h1>Sign in</h1>
 <%= form_tag signin_path do %>
-  <%= label_tag :email %>
-  <%= text_field_tag :email %>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-  <%= submit_tag "Sign in" %>
+  <table>
+    <tr>
+      <td class="sign"><%= label_tag :email %></td>
+      <td><%= text_field_tag :email %></td>
+    </tr>
+    <tr>
+      <td class="sign"><%= label_tag :password %></td>
+      <td><%= password_field_tag :password %></td>
+    </tr>
+    <tr>
+      <td colspan="2"><%= submit_tag "Sign in" %></td>
+    </tr>
+  </table>
 <% end %>

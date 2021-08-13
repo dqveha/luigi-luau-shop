@@ -23,7 +23,7 @@
 }
 
 #spacing {
-  width: 75px;
+  width: 90px;
 }
 
 #white_text > a,
@@ -31,11 +31,15 @@
   color: white;
 }
 
-table {
+table.review {
   width: 100%;
 }
 
 td {
   padding: 5px;
   border: 1px solid black;
+}
+
+.sign {
+  width: 100px;
 }
