@@ -2,13 +2,23 @@
 <%= render "layouts/errors", :object => @product %>
 
 <%= form_for @product do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :cost %>
-  <%= f.number_field :cost, :step => 0.01  %>
-  <%= f.label :country_of_origin %>
-  <%= f.text_field :country_of_origin %>
-  <%= f.submit %>
+  <table>
+      <tr>
+        <td class="sign"><%= f.label :name %></td>
+        <td><%= f.text_field :name %></td>
+      </tr>
+      <tr>
+        <td class="sign"><%= f.label :cost %></td>
+        <td><%= f.number_field :cost, :step => 0.01 %></td>
+      </tr>
+      <tr>
+        <td class="sign"><%= f.label :country_of_origin %></td>
+        <td><%= f.text_field :country_of_origin %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><%= f.submit "Submit"%></td>
+      </tr>
+  </table>
 <% end %>
 
 <%= link_to "Back to product", product_path(@product) %>
