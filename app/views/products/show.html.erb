@@ -6,15 +6,18 @@
   <h4>Here are the reviews for this product:</h4>
 
   <% @product.reviews.each do |review| %>
-    <ul>
-      <li>
-        Author: <%= review.author%>, 
-        Rating: <%= review.rating%>
-        <br>
-        <br>
-        Review: "<%= review.content_body%>"
-      </li>
-    </ul>
+    <table>
+      <tr>
+        <td>Author: <%= review.author%></td>
+      </tr>
+      <tr>
+        <td>Rating: <%= review.rating%></td>
+      </tr>
+      <tr>
+        <td colspan="2">Review: "<%= review.content_body%>"</td> 
+      </tr>
+    </table>
+    <br>
   <% end %>
 <% else %>
   <p>No reviews are listed for this product.</p>
