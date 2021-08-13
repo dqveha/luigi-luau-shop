@@ -22,7 +22,19 @@
   color: red;
 }
 
+#spacing {
+  width: 75px;
+}
+
 #white_text > a,
 #white_text {
   color: white;
+}
+
+table {
+  width: 100%;
+}
+
+td {
+  border: 1px solid black;
 }

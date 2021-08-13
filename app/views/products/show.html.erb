@@ -9,9 +9,10 @@
     <table>
       <tr>
         <td>Author: <%= review.author%></td>
+        <td id="spacing">Rating: <%= review.rating%></td>
       </tr>
       <tr>
-        <td>Rating: <%= review.rating%></td>
+        <td colspan="2">Posted: <%= review.updated_at %></td>
       </tr>
       <tr>
         <td colspan="2">Review: "<%= review.content_body%>"</td> 
