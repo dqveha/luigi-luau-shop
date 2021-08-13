@@ -1,4 +1,4 @@
-<!-- # Luigi's Lūʻau Specialty Shop
+# Luigi's Lūʻau Specialty Shop
 
 ## [https://github.com/dqveha/luigi-luau-shop](https://github.com/dqveha/luigi-luau-shop)
 
@@ -8,7 +8,7 @@
 
 ##
 
-This is the tenth independent project (Ruby, Week 4) assigned by Epicodus that will be broken up into two weeks. This first week is assessing the implementation of Ruby on Rails, creating a database to include a one-to-many relationship between 'Products' and 'Reviews.' The main emphases are incorporating scopes, validations, callbacks, seeding, and flash messages to the project.
+This is the tenth independent project (Ruby, Week 4 & 5) assigned by Epicodus designed to be a two-part series. This first week is assessing the implementation of Ruby on Rails, creating a database to include a one-to-many relationship between 'Products' and 'Reviews.' The second week is assessing the implementation of user authentication and authorization. The core emphases are incorporating scopes, validations, callbacks, seeding, and flash messages to the project.
 
 For a visual relationship representation of the database:
 
@@ -21,6 +21,7 @@ For a visual relationship representation of the database:
 3. RSpec & Capybara
 4. Rails
 5. PostgreSQL
+6. BCrypt
 
 ## Installation Instructions
 
@@ -33,42 +34,42 @@ https://github.com/dqveha/luigi-luau-shop.git
 
 3. Open the `luigi-luau-shop` directory using Visual Studio Code
 4. Run command `docker-compose up --build` in your terminal
-5. Find out your container ID within docker by typing in the terminal:
-
-```
-docker ps
-```
-
-6. Copy the container ID related to the database and load the database_backup.sql within the folder by typing in:
-
-```
-docker exec [container_ID] pg_dump -U postgres luigi_specialty_development < database_backup.sql
-```
-
-7. The user can open the webpage by visiting this URL in the browser:
+5. To set up the server-side database, type `docker-compose run web bundle exec rake db:create` in your terminal
+6. Type `docker-compose run web bundle exec rake db:migrate`
+7. To create fake products and reviews, type in the terminal `docker-compose run web bundle exec rake db:seed`
+8. Open the webpage by visiting this URL in the browser:
 
 ```
 http://localhost:3000/
 ```
 
-8. To run RSpec and see if the tests are passing, type into the terminal:
+9. Create an account by clicking the 'Sign Up' link on the top right corner
+10. After creating this account and you would like it to have admin authorization, type in `docker ps` in your terminal
+11. Copy the database container ID and open up Postgres by typing in your terminal:
+
+```
+docker exec -it -u postgres [CONTAINER_ID] psql
+```
+
+12. Within the terminal, type: `\c luigi_specialty_development`
+13. Then type `SELECT * FROM users`
+14. Find the account ID you created to make admin by typing in your terminal:
+
+```
+UPDATE users SET admin = true WHERE id = [ID];
+```
+
+15. To run RSpec and see if the tests are passing, type into the terminal:
 
 ```
 docker-compose run web bundle exec rspec
 ```
 
-[UPDATE users SET admin = true WHERE id = 1;]
-
 ## Bugs:
 
 1. Decimals do not list to the hundreths place if product's listing price is 1.1, 1.2, 1.3, etc.
-
-## Work in progress:
-
-1. Creating a drop-down menu for the country of origin when adding a product
-2. Improving overall layout using Bootstrap and CSS
-3. Add tables to better organize the reviews and products
+2. Capybara tests under 'signup_pages_spec.rb' are not passing due even though signing up within the website works as long as it is a unique email.
 
 ---
 
-### License is GPLv3 and I make no claim to copyright. -->
+### License is GPLv3 and I make no claim to copyright.
