@@ -1,4 +1,4 @@
-# Luigi's Lūʻau Specialty Shop
+<!-- # Luigi's Lūʻau Specialty Shop
 
 ## [https://github.com/dqveha/luigi-luau-shop](https://github.com/dqveha/luigi-luau-shop)
 
@@ -72,4 +72,4 @@ docker-compose run web bundle exec rspec
 
 ---
 
-### License is GPLv3 and I make no claim to copyright.
+### License is GPLv3 and I make no claim to copyright. -->
