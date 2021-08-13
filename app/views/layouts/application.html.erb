@@ -38,7 +38,7 @@
                 </div>
                 <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
+                        <li id="white_text" class="nav-item">
                             <% if current_user %>
                                 <%= current_user.email %> | <%= link_to "Sign out", '/signout' %>
                             <% else %>
@@ -50,9 +50,9 @@
             </div>
         </nav>
         </div>
-        <div class="container">
-        <span class="notice"><h2><%= flash[:notice] %></h2></span>
-        <span class="notice"><h2><%= flash[:error] %></h2></span>
+        <div class="container mt-3">
+        <span id="notice"><h2><%= flash[:notice] %></h2></span>
+        <span id="error"><h2><%= flash[:error] %></h2></span>
         <%= yield %>
         </div>
     </body>

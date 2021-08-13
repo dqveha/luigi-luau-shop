@@ -57,18 +57,17 @@ http://localhost:3000/
 docker-compose run web bundle exec rspec
 ```
 
+[UPDATE users SET admin = true WHERE id = 1;]
+
 ## Bugs:
 
-1. Unable to get before_save to work with Review class properly
-2. Decimals do not list to the hundreths place if product's listing price is 1.1, 1.2, 1.3, etc.
-3. When the country of origin is saved such as 'uS', the product's listing shows its country of origin as 'U S' with a space in between.
+1. Decimals do not list to the hundreths place if product's listing price is 1.1, 1.2, 1.3, etc.
 
 ## Work in progress:
 
-1. Will create separate pages, if desired, to feature three most recently added products and products with the most reviews
-2. Creating a drop-down menu for the country of origin when adding a product
-3. Improving overall layout using Bootstrap and CSS
-4. Add tables to better organize the reviews and products
+1. Creating a drop-down menu for the country of origin when adding a product
+2. Improving overall layout using Bootstrap and CSS
+3. Add tables to better organize the reviews and products
 
 ---
 

@@ -10,14 +10,14 @@ class ApplicationController < ActionController::Base
 
   def authorize
     if !current_user
-      flash[:alert] = "You need to sign in to view this page."
+      flash[:error] = "You need to sign in to view this page."
       redirect_to '/signin'
     end
   end
 
   def authorize_admin
     if !(current_user && current_user.admin)
-      flash[:alert] = "Admins only. Please sign in with an admin account."
+      flash[:error] = "Admins only. Please sign in as an admin."
       redirect_to '/signin'
     end
   end

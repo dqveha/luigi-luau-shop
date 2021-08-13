@@ -1,4 +1,7 @@
 class ReviewsController < ApplicationController
+  before_action :authorize, only: [:new]
+  before_action :authorize_admin, only: [:edit, :update, :destroy] 
+
   def new
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new
@@ -20,18 +23,18 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    flash[:notice] = "Review deleted"
+    flash[:notice] = "Review deleted."
     redirect_to product_path(@review.product)
   end
 
   def update
     @review = Review.find(params[:id])
     if @review.update(review_params)
-      flash[:notice] = "Review has been updated"
+      flash[:notice] = "Review has been updated."
       redirect_to product_path(@review.product)
     else
       @product = Product.find(params[:product_id])
-      flash[:error] = "There was a problem updating your review"
+      flash[:error] = "There was a problem updating the review."
       render :edit
     end
   end

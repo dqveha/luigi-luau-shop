@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to "/"
     else
-      flash[:alert] = "There was a problem signing in. Please try again."
+      flash[:error] = "There was a problem signing in. Please try again."
       redirect_to signin_path
     end
   end

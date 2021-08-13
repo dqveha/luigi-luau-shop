@@ -15,5 +15,14 @@
 @import "bootstrap";
 
 #notice {
+  color: darkolivegreen;
+}
+
+#error {
   color: red;
+}
+
+#white_text > a,
+#white_text {
+  color: white;
 }
