@@ -15,6 +15,11 @@ gem 'sassc-rails'
 
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 
+gem 'warden', '~> 1.2', '>= 1.2.6'
+
+gem 'rack'
+
+gem 'rails_warden'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.4'

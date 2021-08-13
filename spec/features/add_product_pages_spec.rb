@@ -10,14 +10,16 @@ describe "the add a product process" do
   end
 
   it "adds a new product" do
-    visit signin_path
-    fill_in "Email", :with => "a@a.com"
-    fill_in "Password", :with => "a"
-    within('.find_me') do
-      click_on ("Sign in")
-    end
+    # visit signin_path
+    # fill_in "Email", :with => "a@a.com"
+    # fill_in "Password", :with => "a"
+    # within('.find_me') do
+    #   click_on ("Sign in")
+    # end
+    test_admin = User.create!({:email => "a@a.com", :password => "a", :password_confirmation => "a", :admin => true})
+    login_as(test_admin, :scope => :user)
     visit products_path
-    save_and_open_page
+    save_page
     click_link "Add a product"
     fill_in "product[name]", :with => "Chef's Knife"
     fill_in "Cost", :with => "24.99"
