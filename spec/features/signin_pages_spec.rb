@@ -14,6 +14,7 @@ describe "the signin process" do
     within('.find_me') do
       click_on ("Sign in")
     end
+    save_page
     expect(page).to have_content "You've signed in."
   end
 

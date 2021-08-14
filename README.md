@@ -68,7 +68,6 @@ docker-compose run web bundle exec rspec
 ## Bugs:
 
 1. Decimals do not list to the hundreths place if product's listing price is 1.1, 1.2, 1.3, etc.
-2. Capybara tests under 'signup_pages_spec.rb' are not passing due even though signing up within the website works as long as it is a unique email.
 
 ---
 
