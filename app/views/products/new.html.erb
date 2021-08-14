@@ -17,6 +17,10 @@
         <td><%= f.text_field :country_of_origin %></td>
       </tr>
       <tr>
+        <td><%= f.label :featured, "Feature" %></td>
+        <td><%= f.select :featured, [['No', false], ['Yes', true]] %></td>
+      </tr>
+      <tr>
         <td colspan="2"><%= f.submit "Submit"%></td>
       </tr>
   </table>

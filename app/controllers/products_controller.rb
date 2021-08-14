@@ -1,6 +1,20 @@
 class ProductsController < ApplicationController
   before_action :authorize_admin, only: [:new, :create, :update, :edit, :destroy] 
-  
+
+  def featured
+    @product = Product.find(params[:id])
+    @product.featured = True
+    flash[:notice] = "Product is now featured"
+    render :index
+  end
+
+  def unfeatured
+    @product = Product.find(params[:id])
+    @product.featured = false
+    flash[:notice] = "Product is no longer featured"
+    render :index
+  end
+
   def index
     @products = Product.all
     @products_featured = Product.featured_products
@@ -68,7 +82,7 @@ class ProductsController < ApplicationController
 
   private
     def product_params
-      params.require(:product).permit(:name, :cost, :country_of_origin)
+      params.require(:product).permit(:name, :cost, :country_of_origin, :featured)
     end
 
 end
