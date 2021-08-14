@@ -1,26 +1,24 @@
 class ProductsController < ApplicationController
   before_action :authorize_admin, only: [:new, :create, :update, :edit, :destroy] 
-
+  
   def index
     @products = Product.all
+    @products_featured = Product.featured_products
     render :index
   end
 
   def most
-    @products = Product.all
-    @product_most_reviews = @products.most_reviews
+    @product_most_reviews = Product.most_reviews
     render :most
   end
 
   def recent
-    @products = Product.all
-    @products_recent = @products.recent_three
+    @products_recent = Product.recent_three
     render :recent
   end
 
   def us
-    @products = Product.all
-    @products_us = @products.made_in_us
+    @products_us = Product.made_in_us
     render :us
   end
 

@@ -16,6 +16,8 @@ class Product < ApplicationRecord
   scope :recent_three, -> { order(created_at: :desc).limit(3)}
   
   scope :made_in_us, -> { where("lower(country_of_origin) = ?", "US")}
+
+  scope :featured_products, -> { where(featured: true) }
   
   before_save(:titleize_product)
 
