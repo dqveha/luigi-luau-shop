@@ -17,10 +17,8 @@ Rails.application.routes.draw do
   resources :users
   resources :products do
     resources :reviews do
-    collection do
       get :newest
       get :oldest
-      end
     end
   end
 end

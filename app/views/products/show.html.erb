@@ -24,10 +24,10 @@
 
 <ul class="nav nav-tabs card-header-tabs">
   <li class="nav-item">
-    <%= link_to "Newest", newest_product_reviews_path(@product, @reviews), class: "nav-link active" %>
+    <%= link_to "Newest", product_review_newest_path(@product, @reviews), class: "nav-link active" %>
   </li>
   <li class="nav-item">
-    <%= link_to "Oldest", oldest_product_reviews_path(@product, @product.reviews), class: "nav-link active" %>
+    <%= link_to "Oldest", product_review_oldest_path(@product, @product.reviews), class: "nav-link active" %>
   </li>
 </ul>
 

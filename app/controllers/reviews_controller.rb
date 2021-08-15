@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
   def newest
     @product = Product.find(params[:product_id])
     @reviews = @product.reviews.newest(@product.id)
-    render action: :newest
+    render :newest
   end
 
   def oldest
