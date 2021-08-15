@@ -38,7 +38,7 @@
   <% @reviews.each do |review| %>
     <table class="review">
       <tr>
-        <td>Author: <%= link_to review.author, edit_product_review_path(@product, review) %></td>
+        <td>Author: <%= link_to review.author, edit_product_review_path(@product) %></td>
         <td id="spacing">Rating: <%= review.rating%></td>
       </tr>
       <tr>

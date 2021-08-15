@@ -20,7 +20,8 @@ Review.destroy_all
                   content_body: 
                   Faker::Lorem.paragraph_by_chars(number: 250, supplemental: false),
                   rating: Faker::Number.between(from:1, to: 5),
-                  product_id: product.id)
+                  product_id: product.id,
+                  updated_at: Faker::Time.between(from: DateTime.now, to: DateTime.now + 1, format: :long))
   end
 end
 

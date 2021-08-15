@@ -8,6 +8,18 @@ class ReviewsController < ApplicationController
     render :new
   end
 
+  def newest
+    @product = Product.find(params[:product_id])
+    @reviews = @product.reviews.newest
+    render action: :newest
+  end
+
+  def oldest
+    @product = Product.find(params[:product_id])
+    @reviews = @product.reviews.oldest
+    redirect_to action: product_path(@product, @reviews)
+  end
+
   def show
     @product = Product.find(params[:product_id])
     @review = Review.find(params[:id])

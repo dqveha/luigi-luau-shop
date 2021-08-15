@@ -4,14 +4,12 @@ class ProductsController < ApplicationController
   def featured
     @product = Product.find(params[:id])
     @product.featured = True
-    flash[:notice] = "Product is now featured"
     render :index
   end
 
   def unfeatured
     @product = Product.find(params[:id])
-    @product.featured = false
-    flash[:notice] = "Product is no longer featured"
+    @product.featured = False
     render :index
   end
 
@@ -54,6 +52,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @reviews = @product.reviews
     render :show
   end
 
