@@ -10,14 +10,14 @@ class ReviewsController < ApplicationController
 
   def newest
     @product = Product.find(params[:product_id])
-    @reviews = @product.reviews.newest
+    @reviews = @product.reviews.newest(@product.id)
     render action: :newest
   end
 
   def oldest
     @product = Product.find(params[:product_id])
-    @reviews = @product.reviews.oldest
-    redirect_to action: product_path(@product, @reviews)
+    @reviews = @product.reviews.oldest(@product.id)
+    render action: :oldest #same as newest... need to find a way to DRY this up
   end
 
   def show

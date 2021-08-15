@@ -6,12 +6,12 @@ class Review < ApplicationRecord
   validates :rating, presence: true, inclusion: { in: 1..5 }
   validates :product_id, presence: true
 
-  scope :newest, -> {(
-    select("reviews.author, reviews.rating, reviews.updated_at, reviews.content_body").joins(:product).where("product_id = 52").order("reviews.updated_at DESC")
+  scope :newest, ->(id) {(
+    select("reviews.author, reviews.rating, reviews.updated_at, reviews.content_body").joins(:product).where("product_id = ?", id).order("reviews.updated_at DESC")
   )}
 
-  scope :oldest, -> {(
-    select("reviews.author, reviews.rating, reviews.updated_at, reviews.content_body").joins(:product).where("product_id = 52").order("reviews.updated_at ASC")
+  scope :oldest, ->(id) {(
+    select("reviews.author, reviews.rating, reviews.updated_at, reviews.content_body").joins(:product).where("product_id = ?", id).order("reviews.updated_at ASC")
   )}
 
   before_save(:titleize_author, :capitalize_content)
