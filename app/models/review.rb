@@ -16,8 +16,6 @@ class Review < ApplicationRecord
 
   before_save(:titleize_author, :capitalize_content)
 
-  # scope :oldest, -> { where(updated_at: :asc)}
-
   private
     def titleize_author
       self.author = self.author.titleize

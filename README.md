@@ -19,7 +19,7 @@ For a visual relationship representation of the database:
 1. Docker
 2. Ruby + RubyGems
 3. RSpec & Capybara
-4. Rails
+4. Rails v5.2.4
 5. PostgreSQL
 6. BCrypt
 
