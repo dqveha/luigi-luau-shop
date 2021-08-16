@@ -27,4 +27,21 @@ describe "the add a review process" do
     expect(page).to have_content "Dave"
   end
 
+  it "gives error if review is updated incorrectly by the admin" do
+    visit signin_path
+    fill_in "Email", :with => "a@a.com"
+    fill_in "Password", :with => "a"
+    within('.find_me') do
+      click_on ("Sign in")
+    end
+    visit products_path
+    click_on ("Chef\'s Knife")
+    click_on ("Larry")
+    fill_in "review[author]", :with => ""
+    fill_in "Rating", :with => "5"
+    fill_in "review[content_body]", :with => "It cuts through a mountain the same way you've seen in a usual anime trope."
+    click_on ("Submit")
+    expect(page).to have_content "There was a problem updating the review."
+  end
+
 end
