@@ -29,4 +29,15 @@ describe "the signup process" do
     expect(page).to have_content "Admins only."
   end
 
+  it "gives an error if user does not sign up correctly" do
+    visit signup_path
+    fill_in "user[email]", :with => "z@z.com"
+    fill_in "user[password]", :with => "z"
+    fill_in "user[password_confirmation]", :with => ""
+    within('.find_me') do
+      click_on ("Sign up")
+    end
+    expect(page).to have_content "There was a problem signing up."
+  end
+
 end

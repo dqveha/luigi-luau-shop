@@ -68,7 +68,7 @@ docker-compose run web bundle exec rspec
 ## Bugs:
 
 1. Decimals do not list to the hundreths place if product's listing price is 1.1, 1.2, 1.3, etc.
-
+2. Signing in
 ---
 
 ### License is GPLv3 and I make no claim to copyright.
