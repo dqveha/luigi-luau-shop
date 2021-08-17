@@ -1,22 +1,24 @@
 <h1>Luigi's Lūʻau Specialty Shop</h1>
 
-<h3>Featured products</h3>
-  <% if @products_featured.any? %>
-    <div class="row">
-      <% @products_featured.each do |product| %>
-        <div class="col-sm-2 ms-2 me-2 m-2">
-          <div class="card" style="width: 10rem; height: 10rem;">
-            <img src="" class="card-img-top" alt="<%=product.name%>">
-            <div class="card-body">
-              <a href="<%= product_path(product) %>" class="btn btn-primary"><%=product.name%></a>
+<div class="feature">
+  <h3>Featured products</h3>
+    <% if @products_featured.any? %>
+      <div class="row">
+        <% @products_featured.each do |product| %>
+          <div class="col-sm-2 ms-2 me-2 m-2">
+            <div class="card" style="width: 10rem; height: 10rem;">
+              <img src="" class="card-img-top" alt="<%=product.name%>">
+              <div class="card-body">
+                <a href="<%= product_path(product) %>" class="btn btn-primary"><%=product.name%></a>
+              </div>
             </div>
           </div>
-        </div>
-      <% end%>
-    </div>
-  <% else %>
-    <p>No featured products currently</p>
-  <% end %>
+        <% end%>
+      </div>
+    <% else %>
+      <p>No featured products currently</p>
+    <% end %>
+</div>
 <hr>
 <div class="find_me">
   <h3>All products</h3>
