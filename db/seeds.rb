@@ -8,6 +8,7 @@
 
 Product.destroy_all
 Review.destroy_all
+User.destroy_all
 
 50.times do |product_instance|
   product = Product.create!(name: Faker::Beer.brand,
@@ -25,4 +26,7 @@ Review.destroy_all
   end
 end
 
-p "Created #{Product.count} items, and #{Review.count} reviews"
+User.create!({:email => "z@z.com", :password => "z", :password_confirmation => "z", :admin => true})
+User.create!({:email => "a@a.com", :password => "a", :password_confirmation => "a", :admin => false})
+
+p "Created #{Product.count} items, #{Review.count} reviews, and #{User.count} accounts."
