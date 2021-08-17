@@ -4,7 +4,7 @@
       <h3>Product: <%= @product.name %></h3>
     </td>
     <td>
-      <h3>Cost: <%= @product.cost.round(2) %></h3>
+      <h3>Cost: <%= '%.2f' % @product.cost %></h3>
     </td>
     <td>
       <h3>Country of Origin: <%= @product.country_of_origin %></h3>

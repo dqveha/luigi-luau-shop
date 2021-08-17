@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
   def oldest
     @product = Product.find(params[:product_id])
     @reviews = @product.reviews.oldest(@product.id)
-    render :oldest #same as newest... need to find a way to DRY this up
+    render :oldest
   end
 
   def edit
