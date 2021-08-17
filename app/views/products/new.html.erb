@@ -10,7 +10,7 @@
       </tr>
       <tr>
         <td class="sign"><%= f.label :cost %></td>
-        <td><%= f.number_field :cost, :step => 0.01 %></td>
+        <td><%= f.number_field :cost, :step => 0.01,  min: 0 %></td>
       </tr>
       <tr>
         <td class="sign"><%= f.label :country_of_origin %></td>
@@ -25,5 +25,5 @@
       </tr>
   </table>
 <% end %>
-
+<br>
 <%= link_to "All Products", products_path %>

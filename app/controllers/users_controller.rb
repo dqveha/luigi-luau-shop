@@ -17,24 +17,6 @@ def create
   end
 end
 
-# def edit
-#   @user = User.find(params[:id])
-#   render :edit
-# end
-
-# def destroy
-#   @users = User.all
-#   if User.find(session[:user_id]) == User.find(params[:id])
-#     flash[:notice] = "You cannot destroy your own account."
-#     render :admin_user
-#   else
-#     @user = User.find(params[:id])
-#     @user.destroy
-#     flash[:notice] = "You deleted a user's account."
-#     render :admin_user
-#   end
-# end
-
   private
     def user_params
       params.require(:user).permit(:email, :password, :password_confirmation, :admin)

@@ -17,7 +17,7 @@ For a visual relationship representation of the database:
 ## Technologies Used
 
 1. Docker
-2. Ruby + RubyGems
+2. Ruby 2.6.5 + RubyGems
 3. RSpec & Capybara
 4. Rails v5.2.4
 5. PostgreSQL
@@ -36,15 +36,15 @@ https://github.com/dqveha/luigi-luau-shop.git
 4. Run command `docker-compose up --build` in your terminal
 5. To set up the server-side database, type `docker-compose run web bundle exec rake db:create` in your terminal
 6. Type `docker-compose run web bundle exec rake db:migrate`
-7. To create fake products and reviews, type in the terminal `docker-compose run web bundle exec rake db:seed`
+7. To use seed fake products, reviews and accounts, type in the terminal `docker-compose run web bundle exec rake db:seed`
 8. Open the webpage by visiting this URL in the browser:
 
 ```
 http://localhost:3000/
 ```
 
-9. Create an account by clicking the 'Sign Up' link on the top right corner
-10. After creating this account and you would like it to have admin authorization, type in `docker ps` in your terminal
+9. You can create an account by clicking the 'Sign Up' link on the top right corner
+10. If you would like the account created to have admin authorization, type in `docker ps` in your terminal
 11. Copy the database container ID and open up Postgres by typing in your terminal:
 
 ```
@@ -53,7 +53,7 @@ docker exec -it -u postgres [CONTAINER_ID] psql
 
 12. Within the terminal, type: `\c luigi_specialty_development`
 13. Then type `SELECT * FROM users`
-14. Find the account ID you created to make admin by typing in your terminal:
+14. Find the account ID you created, then set admin to `true` by typing in your terminal:
 
 ```
 UPDATE users SET admin = true WHERE id = [ID];
