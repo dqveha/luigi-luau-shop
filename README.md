@@ -73,6 +73,7 @@ docker-compose run web bundle exec rspec
 
 1. Create management portal
 2. Make partials for redundant pages
+3. Utilize ActiveStorage for uploading pictures
 
 ---
 
